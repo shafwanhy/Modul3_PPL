@@ -6,21 +6,21 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
-class ExampleTest extends DuskTestCase
+class NoteTest extends DuskTestCase
 {
     /**
-     * A basic browser test example.
+     * A Dusk test example.
      */
     public function testNote(): void
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
             ->assertSee('Enterprise Application Development')
-            ->ClickLink('Log In')
+            ->ClickLink('Log in')
             ->assertPathIs('/login')
             ->type('email','hawari@gmail.com')
             ->type('password', 'haw123456')
-            ->press('LOGIN')
+            ->press('LOG IN')
             ->assertPathIs('/dashboard')
             ->ClickLink('Notes')
             ->assertPathIs('/notes')
